@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MvcMovie.Models
 {
-    public class Carrito
+    public class Cart
     {
 
         [Key]
