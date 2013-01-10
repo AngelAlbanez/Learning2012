@@ -1,15 +1,35 @@
-﻿@model IEnumerable<MvcMovies.Models.Genre>
+﻿@model IEnumerable<MvcMovies.Models.Movie>
 
 @{
-    ViewBag.Title = "Store";
+    ViewBag.Title = "Movie -" + Model.Title;
 }
-<h3>Browse Genres</h3>
-<p>Select from @Model.Count() genres:</p>
-<ul>
-    @foreach (var genre in Model)
-    {
-        <li>@Html.ActionLink(genre.Name, "Browse", new {genre=genre.Name})</li>
-    }
-</ul>
 
-<h2>Index</h2>
+<h2>@Model.Title</h2>
+
+<p>
+
+    <img alt="@Model.Title"
+    src="@Model.MovieArtUrl" />
+</p>
+
+<div id="movie-detials">
+    <p>
+        <em>Genre:</em>
+        @Model.Genre.Name
+
+    </p>
+
+    <p>
+        <em>Actor:</em>
+        @Model.Actor.Name
+    </p>
+
+    <p>
+        <em>Price:</em>
+        @string.Format("{0:F}", Model.Price)
+    </p>
+
+    <p class="button">
+        @Html.ActionLink("Add to cart", "AddToCart", "ShoppingCart", new {id=Model.MovieId }, "") 
+    </p>
+</div>

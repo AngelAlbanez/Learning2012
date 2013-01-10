@@ -5,7 +5,7 @@ using System.Web;
 
 namespace MvcMovies.ViewModels
 {
-    public class ShoppingCartReviewViewModel
+    public class ShoppingCartRemoveViewModel
     {
         public string Message { get; set; }
         public decimal CartTotal { get; set; }

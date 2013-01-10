@@ -60,7 +60,7 @@ namespace MvcMovies.Controllers
             int itemCount = cart.RemoveFromCart(id);
 
             // Mostrar mensaje de confirmacion
-            var results = new ShoppingCartReviewViewModel
+            var results = new ShoppingCartRemoveViewModel
             {
                 Message = Server.HtmlEncode(movieName) +
                     " has been removed from your shopping cart.",
